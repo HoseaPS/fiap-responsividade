@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@import url('https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css');
+
+ * {
+	 margin: 0;
+	 padding: 0;
+}
+ html, body {
+	 height: 100%;
+}
+
+.rating fieldset,.rating label { margin: 0; padding: 0; }
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+.rating > input:checked ~ label { color: #FFD700;  } 
+.rating > label:hover ~ input:checked ~ label { color: #FFED85;  } 
+ ul {
+	 list-style: none;
+	 display: flex;
+	 justify-content: flex-end;
+}
+
+ .header-top {
+	 position: relative;
+	 height: 65px;
+	 padding: 10px;
+	 background: #51e0a2;
+	 color: #fff;
+	 font-size: 12px;
+	 font-family: 'Roboto', sans-serif;
+	 text-align: center;
+	 overflow: hidden;
+}
+.header-top h1 {
+    color: black;
+    font-weight: 600;
+    background: #51e0a2;
+    padding-bottom: 10px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: left;
+    padding-left: 20px;
+}
+ .header-top h3 {
+	position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: left;
+    padding-left: 10px;
+}
+ .header-top:before {
+	 content: '';
+	 width: 100%;
+	 background: #000;
+	 height: 100%;
+	 display: block;
+	 position: absolute;
+	 top: 32px;
+	 left: 0;
+}
+ .cards {
+	 margin-top: 1rem;
+	 padding: 10px;
+	 display: grid;
+	 grid-gap: 20px;
+	 font-family: 'Roboto', sans-serif;
+}
+ .cards .card {
+	 position: relative;
+	 max-height: 340px;
+	 padding: 10px;
+	 box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+	 display: grid;
+	 grid-gap: 10px;
+	 grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
+}
+ .cards .card-img {
+	 max-height: 200px;
+     max-width: 100%;
+	 overflow: hidden;
+}
+.cards .card-img img {
+    max-width: 100%;
+}
+ .cards .details-card {
+	 position: relative;
+	 top: 0px;
+	 width: 90%;
+	 padding: 10px;
+	 margin: 0 auto;
+	 background: #fff;
+	 box-shadow: 0 4px 8px 0 rgba(3, 6, 31, 0.15);
+	 display: grid;
+	 grid-gap: 5px;
+}
+ .cards .details-card h3 {
+	 font-size: 22px;
+	 font-weight: 400;
+}
+ .cards .details-card .address {
+	 color: #777;
+	 font-size: 12px;
+}
+.cards .details-card .address a {
+    color: #51e0a2;
+    font-weight: bold;
+    text-decoration: none;
+}
+ .cards .details-card .price {
+	 display: grid;
+	 grid-template-columns: 1fr 1fr;
+}
+ .cards .details-card .price .price-by {
+	 width: 100%;
+	 text-align: right;
+}
+ .cards .details-card .price .price-by .label-price {
+	 font-weight: 600;
+	 text-align: right;
+}
+ .cards .details-card .price .star img {
+	 width: 14px;
+}
+.star label {
+    font-size: 10px;
+}
+ .cards .details-card button {
+	 cursor: pointer;
+	 width: 100%;
+	 padding: 15px;
+	 border: none;
+	 background: black;
+	 color: #fff;
+}
+ .cards .details-card button:focus {
+	 outline: none;
+}
+ .cards .card .credit-img {
+	 position: absolute;
+	 right: 0;
+	 bottom: 0;
+	 padding: 10px;
+	 font-size: 10px;
+	 text-align: right;
+}
+ @media (max-width: 347px) {
+	 .cards .details-card .price {
+		 align-items: baseline;
+	}
+	 .cards .details-card .price .price-by {
+		 font-size: 12px;
+	}
+}
+ @media (min-width: 768px) and (max-width: 1024px) {
+	 .cards .card {
+		 grid-template-columns: 1fr 1fr;
+	}
+	 .cards .details-card {
+		 align-items: flex-start;
+		 align-content: center;
+		 grid-gap: 10px;
+	}
+	 .cards .details-card .price {
+		 grid-template-columns: auto 1fr;
+		 font-size: 15px;
+	}
+	 .cards .details-card .address {
+		 margin-top: -7px;
+	}
+	 .cards .card .credit-img {
+		 padding: 15px 25px;
+	}
+}
+ @media (min-width: 481px) and (max-width: 767px) {
+	 .cards .card {
+		 grid-template-columns: 1fr 1fr;
+	}
+	 .cards .details-card {
+		 align-items: flex-start;
+		 align-content: center;
+		 grid-gap: 10px;
+	}
+	 .cards .details-card .price {
+		 grid-template-columns: auto 1fr;
+		 font-size: 15px;
+	}
+	 .cards .details-card .address {
+		 margin-top: -7px;
+	}
+	 .cards .card .credit-img {
+		 padding: 15px 25px;
+	}
+}
+ @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+	 .cards {
+		 grid-template-columns: 1fr 1fr;
+	}
+	 .cards .credit-img {
+		 font-size: 8px !important;
+	}
+}
+ @media (min-width: 1025px) {
+	 .wrapper {
+		 width: 960px;
+		 margin: auto;
+		 box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+	}
+	 .wrapper .cards {
+		 grid-template-columns: 1fr 1fr 1fr;
+	}
+	 .wrapper .cards .details-card h3 {
+		 font-size: 18px;
+	}
+}
